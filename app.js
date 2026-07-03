@@ -15,11 +15,7 @@ const user = {
 
 const JWT_SECRET = "menimSecretKeyim";
 
-app.use(
-  cors({
-    origin: "https://jwt-front-beta.vercel.app/",
-  }),
-);
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
