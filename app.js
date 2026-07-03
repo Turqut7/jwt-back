@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 
 const app = express();
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 const user = {
   id: 1,
@@ -15,7 +15,11 @@ const user = {
 
 const JWT_SECRET = "menimSecretKeyim";
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://jwt-front-j79w.vercel.app/",
+  }),
+);
 app.use(express.json());
 
 app.get("/", (req, res) => {
